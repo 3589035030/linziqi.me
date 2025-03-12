@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f6fa;
+}
+
+.countdown-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-title {
+    font-size: calc(1.2vw + 12px);
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.countdown-unit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-height: 60px;
+}
+
+.countdown-unit span {
+    font-size: calc(3vw + 16px);
+    color: #3498db;
+    margin: 0 5px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* 设置最大和最小字体大小限制 */
+@media screen and (max-width: 480px) {
+    .countdown-unit span {
+        font-size: calc(4vw + 12px);
+    }
+    .countdown-title {
+        font-size: calc(2vw + 10px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .countdown-unit span {
+        font-size: 52px;
+    }
+    .countdown-title {
+        font-size: 26px;
+    }
+}
