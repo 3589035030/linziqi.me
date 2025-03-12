@@ -167,36 +167,27 @@
         .countdown-unit {
             display: flex;
             justify-content: center;
-            gap: 5px;
+            gap: 10px;
             margin-top: 15px;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            padding: 5px 0;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-        }
-        
-        .countdown-unit::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            flex-wrap: wrap;
         }
 
         .countdown-unit span {
             background: linear-gradient(145deg, #f8f9fa, #e6e7e9);
-            padding: 6px;
-            border-radius: 8px;
-            font-size: 1em;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 1.1em;
             font-weight: 700;
             color: #3a3f47;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 38px;
+            min-width: 45px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             margin: 2px;
-            white-space: nowrap;
         }
         
         .countdown-unit span:hover {
@@ -206,14 +197,15 @@
 
         @media (max-width: 480px) {
             .countdown-unit {
-                gap: 4px;
-                justify-content: flex-start;
+                gap: 5px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .countdown-unit span {
-                padding: 4px;
+                padding: 5px;
                 font-size: 0.85em;
-                min-width: 32px;
-                margin: 1px;
+                min-width: 35px;
+                margin: 2px;
             }
         }
         @media (min-width: 1200px) {
@@ -239,74 +231,34 @@
         
         @media (max-width: 480px) {
             .countdown-unit {
-                gap: 4px;
+                gap: 5px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             .countdown-unit span {
-                padding: 4px;
-                font-size: 0.8em;
-                min-width: 32px;
-                margin: 1px;
+                padding: 5px;
+                font-size: 0.85em;
+                min-width: 35px;
+                margin: 2px;
             }
             .countdown-time {
-                gap: 8px;
+                gap: 10px;
             }
             .countdown-time span {
-                padding: 6px;
-                min-width: 40px;
-                font-size: 0.9em;
+                padding: 8px;
+                min-width: 45px;
+                font-size: 1em;
             }
             .task-number {
-                font-size: 1.1em;
-                margin-bottom: 8px;
+                font-size: 1.3em;
             }
             .target-date {
-                font-size: 0.9em;
-                padding: 6px;
-                margin-bottom: 12px;
+                font-size: 1em;
+                padding: 8px;
             }
             body {
-                padding: 8px 8px 65px;
+                padding: 10px 10px 70px;
             }
-            .countdown-container {
-                padding: 15px;
-                gap: 15px;
-            }
-            .countdown-item {
-                padding: 15px;
-                margin: 0 5px;
-                border-radius: 12px;
-            }
-            h1 {
-                margin: 20px 0;
-                font-size: clamp(1.5em, 3.5vw, 2.5em);
-            }
-            .beian-info {
-                font-size: 11px;
-                padding: 0 10px;
-            }
-            .footer-container {
-                padding: 10px 0;
-            }
-        }
-        .countdown-time {
-            gap: 10px;
-        }
-        .countdown-time span {
-            padding: 8px;
-            min-width: 45px;
-            font-size: 1em;
-        }
-        .task-number {
-            font-size: 1.3em;
-        }
-        .target-date {
-            font-size: 1em;
-            padding: 8px;
-        }
-        body {
-            padding: 10px 10px 70px;
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
@@ -328,83 +280,3 @@
                 padding: 20px 20px 80px;
             }
         }
-/* 添加超小屏幕适配 */
-@media (max-width: 375px) {
-    .countdown-unit {
-        gap: 2px;
-    }
-    .countdown-unit span {
-        padding: 3px;
-        font-size: 0.7em;
-        min-width: 24px;
-        margin: 1px;
-    }
-    .countdown-time span {
-        padding: 4px;
-        min-width: 30px;
-        font-size: 0.8em;
-    }
-    .task-number {
-        font-size: 0.95em;
-        margin-bottom: 6px;
-        padding-bottom: 6px;
-    }
-    .target-date {
-        font-size: 0.8em;
-        padding: 4px;
-        margin-bottom: 8px;
-    }
-    .countdown-container {
-        padding: 8px;
-        gap: 10px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .countdown-item {
-        padding: 10px;
-        margin: 0 2px;
-    }
-    h1 {
-        margin: 12px 0;
-        font-size: clamp(1.2em, 3vw, 1.8em);
-    }
-    body {
-        padding: 5px 5px 60px;
-    }
-}
-
-/* 优化网格布局的最小宽度 */
-.countdown-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* 添加极小屏幕适配 */
-@media (max-width: 320px) {
-    .countdown-unit {
-        gap: 1px;
-    }
-    .countdown-unit span {
-        padding: 2px;
-        font-size: 0.65em;
-        min-width: 22px;
-        margin: 1px;
-    }
-    .task-number {
-        font-size: 0.9em;
-        margin-bottom: 5px;
-        padding-bottom: 5px;
-    }
-    .target-date {
-        font-size: 0.75em;
-        padding: 3px;
-        margin-bottom: 6px;
-    }
-    .countdown-container {
-        padding: 6px;
-        gap: 8px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .countdown-item {
-        padding: 8px;
-        margin: 0 1px;
-    }
-}
